@@ -19,36 +19,36 @@ export default function Login() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-purple-200 via-pink-100 to-blue-100 text-gray-800">
+    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-darkMist via-[#1a1a2e] to-[#2e1a47]">
       <form
         onSubmit={handleSubmit}
-        className="backdrop-blur-md bg-white/70 p-6 rounded-xl shadow-xl w-80 border border-white/40"
+        className="bg-white/5 backdrop-blur-md border border-fadedGold p-8 rounded-xl shadow-xl w-96"
       >
-        <h2 className="text-2xl font-semibold mb-4 text-center text-purple-700">Bienvenido</h2>
+        <h2 className="text-3xl font-serif text-fadedGold mb-6 text-center">Access To Oniria</h2>
 
-        {error && <p className="text-red-500 text-sm mb-3 text-center">{error}</p>}
+        {error && <p className="text-red-500 text-sm mb-4 text-center">{error}</p>}
 
         <input
           type="email"
-          placeholder="Correo"
+          placeholder="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full mb-3 p-2 rounded-lg border border-purple-200 bg-white/60 focus:outline-none focus:ring-2 focus:ring-purple-400"
+          className="w-full mb-4 p-3 rounded-lg border border-fadedGold bg-black/30 text-moonGray placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-arcanePurple"
         />
 
         <input
           type="password"
-          placeholder="Contraseña"
+          placeholder="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="w-full mb-3 p-2 rounded-lg border border-purple-200 bg-white/60 focus:outline-none focus:ring-2 focus:ring-purple-400"
+          className="w-full mb-4 p-3 rounded-lg border border-fadedGold bg-black/30 text-moonGray placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-arcanePurple"
         />
 
         <button
           type="submit"
-          className="w-full bg-purple-500 text-white py-2 rounded-lg hover:bg-purple-600 transition shadow-md"
+          className="w-full bg-gradient-to-r from-arcanePurple via-purple-700 to-indigo-800 text-white py-2 rounded-lg hover:brightness-125 transition font-serif shadow-md border border-purple-500"
         >
-          Entrar
+          Invoke
         </button>
       </form>
     </div>
