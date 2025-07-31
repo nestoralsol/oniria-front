@@ -14,15 +14,32 @@ export default function Login() {
       await login(email, password);
       navigate('/dashboard');
     } catch (err) {
-      setError('Credenciales inválidas');
+      setError('Invalid Credentials');
     }
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-darkMist via-[#1a1a2e] to-[#2e1a47]">
+    <div className="relative flex items-center justify-center min-h-screen bg-gradient-to-br from-darkMist via-[#1a1a2e] to-[#2e1a47] text-moonGray font-serif overflow-hidden">
+      {/* Bruma mágica - partículas suaves */}
+      <div className="absolute inset-0 pointer-events-none z-0">
+        {[...Array(10)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-2 h-2 bg-white/10 rounded-full blur-md animate-float"
+            style={{
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+              animationDuration: `${5 + Math.random() * 5}s`,
+              animationDelay: `${Math.random() * 5}s`,
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Formulario de login */}
       <form
         onSubmit={handleSubmit}
-        className="bg-white/5 backdrop-blur-md border border-fadedGold p-8 rounded-xl shadow-xl w-96"
+        className="relative z-10 bg-white/5 backdrop-blur-md border border-fadedGold p-8 rounded-xl shadow-xl w-96"
       >
         <h2 className="text-3xl font-serif text-fadedGold mb-6 text-center">Access To Oniria</h2>
 
